@@ -43,31 +43,34 @@ const App = () => {
   return (
     <div>
       <input
-        class='shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+        class='m-2 shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
         type='text'
         placeholder='Company name'
         onChange={(e) => {
           const val = e.target.value;
           setCompany((prev) => val);
         }}
+        required
       />
       <input
-        class='shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+        class='m-2 shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
         type='text'
         placeholder='Date'
         onChange={(e) => {
           const val = e.target.value;
           setDate((prev) => val);
         }}
+        required
       />
-      <div>
+      <div class='m-2 text-white'>
         {" "}
         Fill the below boxes and click "Add" to add a row in the table.{" "}
       </div>
-      <form>
+      <form action='' method=''>
         <input
+          required
           type='text'
-          class='shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          class='shadow appearance-none border rounded w-1/4 py-2 px-3 m-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           name='itemname'
           placeholder='Item Name'
           onChange={handleChange}
@@ -75,38 +78,43 @@ const App = () => {
         />
         <input
           type='text'
-          class='shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          class='shadow appearance-none border rounded w-1/4 m-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           name='itemprice'
           placeholder='Item Price'
           onChange={handleChange}
           value={table.item.itemprice}
+          required
         />
         <input
           type='text'
           name='itemqty'
-          class='shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          class='shadow appearance-none border rounded w-1/4 m-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           placeholder='Item Qty'
           onChange={handleChange}
           value={table.item.itemqty}
+          required
         />
         <input
           type='text'
           name='itemrevisions'
-          class='shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          class='shadow appearance-none border rounded w-1/4 m-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           placeholder='Revision'
           onChange={handleChange}
           value={table.item.itemrevisions}
+          required
         />
         <input
           type='text'
           name='itemtotal'
-          class='shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+          class='shadow appearance-none border rounded w-1/4 m-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
           placeholder='Total'
           onChange={handleChange}
           value={table.item.itemtotal}
+          required
         />
         <button
-          class='my-4 mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+          type='submit'
+          class='mx-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
           onClick={handleSubmit}
         >
           Add
@@ -114,12 +122,15 @@ const App = () => {
       </form>
       <Pdf targetRef={ref} filename='invoice.pdf'>
         {({ toPdf }) => (
-          <button
-            class='my-4 bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
-            onClick={toPdf}
-          >
-            Generate Pdf
-          </button>
+          <div class='flex flex-col items-center justify-center'>
+            <button
+              class='my-4 bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+              onClick={toPdf}
+            >
+              Generate PDF
+            </button>
+            <div class='text-white font-bold'>Preview</div>
+          </div>
         )}
       </Pdf>
       <div
