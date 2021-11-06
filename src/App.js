@@ -4,6 +4,7 @@ import "./index.css";
 import Invoice from "./invoice";
 import { useState } from "react";
 const ref = React.createRef();
+
 const App = () => {
   const [company, setCompany] = useState("");
   const [date, setDate] = useState("");
