@@ -11,7 +11,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      acumin: ["acumin-variable-concept", "sans-serif"],
+      montserrat: ["montserrat", "sans-serif"],
       merriweather: ["merriweather", "sans-serif"],
     },
   },

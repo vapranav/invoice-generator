@@ -3,6 +3,7 @@ import Pdf from "react-to-pdf";
 import "./index.css";
 import Invoice from "./invoice";
 import { useState } from "react";
+import { FaLinkedinIn, FaBehance, FaInstagram } from "react-icons/fa";
 const ref = React.createRef();
 
 const App = () => {
@@ -140,7 +141,21 @@ const App = () => {
       >
         <div class='relative text-jager-gray bg-jager-gray'>Hello</div>
         <Invoice companyName={company} date={date} tableitems={table} />
-        <div class='absolute bottom-40 right-0 w-5/6 h-20 bg-gradient-to-r from-jager-black to-jager-blue'></div>
+        <div class='absolute bottom-40 right-0 w-5/6 h-20 bg-gradient-to-r from-jager-black to-jager-blue flex flex-row items-center'>
+          <div class='mx-4 rounded-full h-14 w-14 bg-jager-gray flex justify-center items-center'>
+            <FaBehance class='text-xl text-jager-blue' />
+          </div>
+          <div class='mx-4 rounded-full h-14 w-14 bg-jager-gray flex justify-center items-center'>
+            <FaLinkedinIn class='text-xl text-jager-blue' />
+          </div>
+
+          <div class='mx-4 rounded-full h-14 w-14 bg-jager-gray flex justify-center items-center'>
+            <FaInstagram class='text-jager-blue text-xl' />
+          </div>
+          <div class='text-2xl font-normal text-white tracking-widest'>
+            /HOWLDRAWS{" "}
+          </div>
+        </div>
       </div>
     </div>
   );

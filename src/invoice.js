@@ -3,15 +3,17 @@ import React from "react";
 const Invoice = (props) => {
   let items = props.tableitems.items;
   return (
-    <div class='bg-jager-gray h-full '>
+    <div class='font-montserrat bg-jager-gray h-full '>
       <div class='flex justify-between'>
         <div class='pl-4 text-6xl text-white font-extrabold bg-gradient-to-r from-jager-black to-jager-blue'>
-          INVOICE{" "}
+          INVOICE &nbsp;{" "}
         </div>
         <div class='mr-4'>
-          <div class='text-black text-sm font-medium'>CONTACT</div>
-          <div class='text-jager-blue text-base font-bold'>Mohammed Jafer</div>
-          <div class='text-jager-blue text-base font-medium'>9849379739</div>
+          <div class='text-black text-sm font-bold'>CONTACT</div>
+          <div class='text-jager-blue text-base font-extrabold'>
+            Mohammed Jafer
+          </div>
+          <div class='text-jager-blue text-base font-bold'>9849379739</div>
         </div>
       </div>
       <div class='flex justify-between mt-4'>
