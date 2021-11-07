@@ -31,10 +31,7 @@ const Invoice = (props) => {
       </div>
       <div class='flex justify-between'>
         <div class='pl-4 text-normal text-black w-1/2 font-sm'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          {props.address}
         </div>
       </div>
       <table class='table-fixed m-auto'>
